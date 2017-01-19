@@ -22,8 +22,8 @@
 
 First Name:*<t> 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Last Name:*<br>
-<input type="text" name="firstname" required><t>
-&nbsp &nbsp <input type="text" name="lastname" required><br><br>
+<input type="text" name="firstName" required><t>
+&nbsp &nbsp <input type="text" name="lastName" required><br><br>
 
 City/Town:<t>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp Country:<br>
@@ -36,13 +36,13 @@ City/Town:<t>
   </select><br><br> 
 
 Date of Birth:*<t>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Age 55:<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Age:<br>
 <input type="date" name="dob" required><t>
-&nbsp &nbsp <input type="range" name="points" min="18" max="100"><br><br>
+&nbsp &nbsp <input type="text" name="age"><br><br>
 
 Company:&nbsp &nbsp <t>
 &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Do you have pet:<br>
-<input type="text" name="country"><t>
+<input type="text" name="company"><t>
 &nbsp &nbsp <input type="checkbox" name="pet" value="dog"> Dog<t>
 
 <input type="checkbox" name="pet" value="cat"> Cat<br>
@@ -50,16 +50,16 @@ Company:&nbsp &nbsp <t>
 <h3>2.Account information:</h3>
 User Name:*<t> 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Email:*<br>
-<input type="text" name="username" required><t>
-&nbsp &nbsp <input type="text" name="email" required><br><br>
+<input type="text" name="userName" required><t>
+&nbsp &nbsp <input type="text" name="eMail" required><br><br>
 
 Password:*<t>&nbsp 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Re-enter Password:*<br>
-<input type="password" name="pass" required><t>
+<input type="password" name="password" required><t>
 &nbsp &nbsp <input type="password" name="pass" required><br>
 
 <h3>3.A few word about yourself</h3>
-<textarea rows="6" cols="50">
+<textarea rows="6" cols="50" name="description">
 </textarea><br>
 
 <h3>4. Terms and Conditions:</h3>
