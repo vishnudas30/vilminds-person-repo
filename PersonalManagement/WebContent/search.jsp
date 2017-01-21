@@ -1,30 +1,26 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
 <%@page import="com.vilminds.person.model.Person"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
-
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/display.css"/>
+<link rel="stylesheet" type="text/css" href="css/search.css" />
 </head>
 <body>
-
 <div align="center">
-
-
+<form action="personServletpath" method="post">
+<input type="hidden" name="action" value="searchPerson"/>
+ Enter FirstName:
+<input type="text" name=firstName>
+<input type="submit" value="Search">
+</form>
  <%
-		 List<Person> personList = (List<Person>) request.getAttribute("myPersonList"); 
+		 ArrayList<Person> personSearch = (ArrayList<Person>) request.getAttribute("Search"); 
 		       
  %>
-
 <table border="1">
 <tr>
 <th>Gender</th>
@@ -40,7 +36,11 @@
 
 
 <%
-	for(Person per : personList)
+	if(personSearch!=null)
+	{
+		
+	
+	for(Person per : personSearch)
 	{
 		
 %>
@@ -54,15 +54,11 @@
 <td><%=per.getCompany() %></td>
 <td><%=per.getUserName() %></td>
 <td><%=per.geteMail() %></td>
-<td><a href =" personServletpath?action=deletePersons&eMail=<%=per.geteMail() %>" >Delete</a></td>
-<td><a href =" personServletpath?action=updatePersons&eMail=<%=per.geteMail() %>" >Update</a></td>
 </tr>
 <%
-        }
+	}    
+	}
 %>
-
-</table>
-
-
+</div>
 </body>
 </html>
