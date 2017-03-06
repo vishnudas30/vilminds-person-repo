@@ -58,4 +58,11 @@ public class PersonDelegateImpl implements PersonDelegate {
 		return personservice.searchPersonal(firstName);
 	}
 
+	public boolean loginPersonal(String userName,String password)
+	{
+		PersonServiceImpl personservice = new PersonServiceImpl();
+		return personservice.loginPersonal(userName,password);
+		
+	}
+	
 }

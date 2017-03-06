@@ -136,8 +136,6 @@ public class RegisterDao {
 				per.setUserName(userName1);
 				per.seteMail(eMail1);
 				
-				
-				
 				personList.add(per);
 								
 			}	
@@ -155,7 +153,7 @@ public class RegisterDao {
 	{
 		Connection con = getConnection();
 		
-		String sql = "SELECT * FROM personal WHERE firstName= '"+firstName+"'";
+		String sql = "SELECT * FROM personal WHERE firstName LIKE '%" + firstName + "%'";
 		ArrayList<Person> personSearch = new ArrayList<Person>();
 		
 		try {
@@ -224,7 +222,6 @@ public class RegisterDao {
 				String userName1 = rs.getString("userName");
 				String eMail1 = rs.getString("eMail");
 				
-				
 				person1.setFirstName(firstName1);
 				person1.setLastName(lastName1);
 				person1.setCity(city1);
@@ -244,8 +241,38 @@ public class RegisterDao {
 		return person1;
 	}
 
+	public boolean loginPersonal(String userName,String password)
+	{
+		Connection con = getConnection();
+		
+		Person per1 = new Person();
+		boolean loginSuccess = false;
+		String sql = "SELECT * FROM personal WHERE userName= '"+userName+"' AND password= '"+password+"' ";
+		System.out.println("SQL Query"+sql);
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next())
+			{
+				loginSuccess = true;
+				String userName1 = rs.getString("userName");
+				String password1 = rs.getString("password");
+				System.out.println("Login Success"+userName1);
+				
+				per1.setUserName(userName1);
+				per1.setUserName(password1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("loginSuccess value"+loginSuccess);
+		return loginSuccess;
+	}
 
-
+	
 }
 
 

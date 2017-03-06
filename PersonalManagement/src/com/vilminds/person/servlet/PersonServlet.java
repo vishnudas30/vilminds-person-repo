@@ -88,7 +88,29 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 	}
 	
+	if(action.equals("loginPersonal"))
+	{
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		PersonDelegateImpl register = new PersonDelegateImpl();
+		if(register.loginPersonal(userName,password))
+		{
+			 System.out.println("login success redirecting to home.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("/home.jsp");  
+	        rd.forward(request,response);  
+		}
+		 else
+		 {  
+			 System.out.println("login failed redirecting to login.jsp");
+			
+		    RequestDispatcher rd=request.getRequestDispatcher("/login.jsp");  
+		    rd.forward(request,response); 
+		    
+	
+	     }		
 	}
+}
 	
 
 	@Override

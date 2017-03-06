@@ -20,4 +20,5 @@ public interface PersonService {
 	
 	public ArrayList<Person> searchPersonal(String firstName);
 	
+	public boolean loginPersonal(String userName,String password);
 }
